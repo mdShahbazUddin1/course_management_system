@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Google Login Example</title>
+    <!-- Include the Google Sign-In API -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        // Function called when the Google API library is loaded
+        function onGoogleLoad() {
+            gapi.load('auth2', function () {
+                // Initialize the GoogleAuth object
+                gapi.auth2.init({
+                    client_id: "76b1a9c5f89736705ee5",
+                });
+            });
+        }
+
+        // Function called when the user clicks the "Sign In with Google" button
+        function signIn() {
+            gapi.auth2.getAuthInstance().signIn().then(function (googleUser) {
+                var id_token = googleUser.getAuthResponse().id_token;
+                // Send the id_token to your server for verification and user authentication
+                // You can use Ajax or fetch API to send the token to your server
+                console.log('ID Token: ' + id_token);
+            }).catch(function (error) {
+                console.log('Error signing in: ' + error);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Add a button to trigger the Google sign-in -->
+    <button onclick="signIn()">Sign In with Google</button>
+
+    <!-- Initialize the Google API on page load -->
+    <script src="https://apis.google.com/js/platform.js?onload=onGoogleLoad" async defer></script>
+</body>
+
+</html>

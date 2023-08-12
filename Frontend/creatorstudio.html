@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== link the CSS file here ======== -->
+    <link rel="stylesheet" href="./styles/commonDashboard.css">
+    <!-- <link rel="stylesheet" href="./styles/insights.css"> -->
+
+
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Creator Studio</title>
+    <!-- CREATOR STUDIO CSS *************************************************************************** -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css"
+        integrity="sha256-7jUS+MWeqkFdmW9ozkZ7mPagz+QmMbsBlt+Q3MsE+FU=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"
+        integrity="sha256-2Dbg51yxfa7qZ8CSKqsNxHtph8UHdgbzxXF9ANtyJHo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/creatorstudio.css">
+
+    <!-- CREATOR STUDIO CSS *************************************************************************** -->
+</head>
+
+<body>
+    <div class="studio-overlay"></div>
+    <div class="loader"></div>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="./images/logo.png" style="width: 100%;" alt="">
+                </span>
+
+                <!-- <div class="text logo-text">
+                    <span class="name">Course Craft</span>
+                    <span class="profession">Insights</span>
+                </div> -->
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="./dashboard.html">
+                            <!-- <i class='bx bx-home-alt icon' ></i> -->
+                            <i class="fa-solid fa-house icon"></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="insights.html">
+                            <!-- <i class='bx bx-bar-chart-alt-2 icon' ></i> -->
+                            <i class="fas fa-chart-bar icon"></i>
+                            <span class="text nav-text">Insights</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="creatorstudio.html">
+                            <!-- <i class='bx bx-bell icon'></i> -->
+                            <i class="fas fa-palette icon"></i>
+                            <span class="text nav-text">Creator Studio</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <!-- <i class='bx bx-pie-chart-alt icon' ></i> -->
+                            <i class="fas fa-envelope icon"></i>
+                            <span class="text nav-text">Messages</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <!-- <i class='bx bx-pie-chart-alt icon' ></i> -->
+                            <i class="fas fa-bell icon"></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <!-- <i class='bx bx-pie-chart-alt icon' ></i> -->
+                            <i class="fas fa-user icon"></i>
+                            <span class="text nav-text">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="">
+                        <!-- <i class='bx bx-log-out icon' ></i> -->
+                        <i id="onclickk" class="fa-solid fa-right-from-bracket fa-rotate-180 icon"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="home">
+        <header style="width: 100%;">
+            <div class="profile">
+                <div class="profile-logo">
+                    <p id="userfirstname">U</p>
+                </div>
+                <p id="username" style="padding-left: 5px;">Username</p>
+            </div>
+
+        </header>
+        <!-- ************************* write your code here to display data ************************* -->
+        <div class="upload-form">
+            <!-- <svg class="std-loader" viewBox="25 25 50 50">
+                <circle r="20" cy="50" cx="50"></circle>
+            </svg> -->
+            <h2 id="form-header">Create Course</h2>
+            <form action="http://13.233.69.180:3000/api/upload" method="POST" id="form-upload-form"
+                enctype="multipart/form-data">
+
+                <div class="combine">
+                    <div class="form-item">
+                        <label for="title">Title:</label>
+                        <input type="text" placeholder="Course Title..." class="input-ele" name="title" id="title"
+                            required>
+                    </div>
+
+                    <div class="form-item">
+                        <label for="course">Course:</label>
+                        <select name="course" class="input-ele" id="course" required>
+                            <option value="">Course</option>
+                            <option value="Data Analyst">Data Analyst</option>
+                            <option value="Full Stock Web-Development">Full Stock Web-Development</option>
+                            <option value="Networking">Networking</option>
+                            <option value="Database Engineering">Database Engineering</option>
+                            <option value="Frontend Frameworks">Frontend Frameworks</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="combine">
+                    <div class="form-item">
+                        <label for="language">Language:</label>
+                        <input type="text" placeholder="Language" class="input-ele" name="language" id="language"
+                            required>
+                    </div>
+
+                    <div class="form-item">
+                        <label for="description">Description:</label>
+                        <textarea name="description" placeholder="Course Description" id="description"
+                            required></textarea>
+                    </div>
+                </div>
+
+                <div class="combine">
+                    <div class="form-item">
+                        <label for="">Video:</label>
+                        <div class="drag-area">
+                            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <div class="drag-heading">Browse File to Upload</div> <!--  Drag & drop to upload File -->
+                            <!-- <span>OR</span> -->
+                            <label for="video">Browse File</label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-item">
+                        <label for="">Thumbnail:</label>
+                        <div class="drag-area">
+                            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <div class="drag-heading">Browse File to Upload</div> <!--  Drag & drop to upload File -->
+                            <!-- <span>OR</span> -->
+                            <label for="thumbnail">Browse File</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-item">
+                    <input hidden type="file" class="input-ele" name="video" id="video" required>
+                </div>
+
+                <div class="form-item">
+                    <input type="file" class="input-ele" name="image" id="thumbnail" required hidden>
+                </div>
+
+                <div class="">
+                    <button type="submit" id="submit">submit</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+
+
+    <script>
+        // CREATOR STUDIO JS ****************************************************************************
+
+        let creatorId = localStorage.getItem("userId") || null // Replace it with the data of local storage
+        let creatorName = localStorage.getItem("username") || null // Replace it with the data of local storage
+        let form = document.getElementById('form-upload-form'),
+            formEle = document.getElementsByClassName("input-ele")
+        let title = document.getElementById("title")
+        let description = document.getElementById("description")
+        let video = document.getElementById("video")
+        let thumbnail = document.getElementById("thumbnail")
+        let course = document.getElementById("course")
+        let language = document.getElementById("language"),
+            imagesTypes = ["image/jpeg", "image/png", "image/jpg"]
+
+
+        video.addEventListener("change", () => {
+            if (video.files[0].type !== "video/mp4") {
+                Swal.fire({
+                    icon: 'error',
+                    title: "Please provide only Video"
+                })
+                return;
+            }
+            Swal.fire({
+                icon: 'success',
+                title: "Uploaded"
+            })
+        })
+
+        thumbnail.addEventListener("change", () => {
+            if (!imagesTypes.includes(thumbnail.files[0].type)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: "Thumbnail must be an Image"
+                })
+                return;
+            }
+            Swal.fire({
+                icon: 'success',
+                title: "Uploaded"
+            })
+        })
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (!creatorId || !creatorName) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Creator Id or Name is Missing!"
+                });
+                return;
+            }
+
+            const formData = new FormData()
+            formData.append("title", title.value)
+            formData.append("description", description.value)
+            formData.append("video", form.elements['video'].files[0])
+            formData.append("image", form.elements['image'].files[0])
+            formData.append("language", language.value)
+            formData.append("course", course.value)
+            formData.append("creatorId", creatorId)
+            formData.append("creatorName", creatorName)
+
+            if (video.files[0].type !== "video/mp4") return alert("Please provide video at video sections")
+            if (!imagesTypes.includes(thumbnail.files[0].type)) return alert("Thumbnail must be an Image")
+
+            document.getElementsByClassName("loader")[0].style.display = "block"
+            document.getElementsByClassName("studio-overlay")[0].style.display = "block"
+            document.querySelector("body").style.overflow = "hidden"
+
+            fetch('http://13.233.69.180:3000/api/upload', {
+                method: 'POST',
+                body: formData
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    console.log(data);
+                    Swal.fire({
+                        icon: 'success',
+                        title: "Success",
+                        text: "Course Created"
+                    })
+                    form.reset();
+                    window.location = "./dashboard.html"
+                })
+                .catch(function (error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: "Failed",
+                        text: "Something went wrong"
+                    })
+                    console.log('Error', error);
+                })
+                .finally(() => {
+                    document.getElementsByClassName("loader")[0].style.display = "none"
+                    document.getElementsByClassName("studio-overlay")[0].style.display = "none"
+                    document.querySelector("body").style.overflow = "auto"
+                    console.log("fetching Completed")
+                })
+        });
+
+        // CREATOR STUDIO JS ****************************************************************************
+
+        const body = document.querySelector('body'),
+            sidebar = body.querySelector('nav'),
+            toggle = body.querySelector(".toggle"),
+            searchBtn = body.querySelector(".search-box"),
+            modeSwitch = body.querySelector(".toggle-switch"),
+            modeText = body.querySelector(".mode-text");
+
+
+        toggle.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        })
+
+        searchBtn.addEventListener("click", () => {
+            sidebar.classList.remove("close");
+        })
+
+        modeSwitch.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            if (body.classList.contains("dark")) {
+                modeText.innerText = "Light mode";
+            } else {
+                modeText.innerText = "Dark mode";
+
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+<!-- connect your js file here -->
+<script src="./scripts/insights.js"></script>
+<script src="./scripts/commondashboard.js"></script>
+
+
+<script>
+
+    let userfirstname = document.getElementById("userfirstname");
+    let username = document.getElementById("username");
+
+    window.addEventListener("load", myScript);
+    function myScript() {
+        let user_name = localStorage.getItem("username")
+        console.log(user_name)
+
+        let string = user_name[0].toUpperCase()
+        for (let i = 1; i < user_name.length; i++) {
+            string += user_name[i]
+        }
+        if (username === null) {
+            username.innerHTML = ""
+            userfirstname.innerHTML = "";
+        } else {
+            username.innerHTML = `${string}`
+            userfirstname.innerHTML = `${string[0]}`
+        }
+    }
+
+
+
+</script>

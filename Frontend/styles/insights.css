@@ -1,0 +1,109 @@
+.sidebar ul li:nth-child(2){
+    background-color: #695CFE;
+    color: #fff;
+    border-radius: 5px;
+}
+.insights-parent{
+    width: 100%;
+    height:100%; 
+    /* border: 1px solid red; */
+    padding: 50px;
+}
+.insights-content{
+    width: 100%;
+    height:100%; 
+    /* border: 1px solid red; */
+}
+
+/* courses filter */
+
+.filter-container {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    /* border: 1px solid green; */
+    /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
+  }
+  #course-filter{
+    width: 20%;
+    height: 50%;
+    border: none;
+    border-radius: 5px;
+    margin:20px 10px;
+    font-size: large;
+    background: none;
+  }
+  #course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .course-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+  }
+  /* insight table content */
+  .insights-table{
+    width: 100%;
+    /* border: 1px solid blue; */
+    /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
+    height: fit-content;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 5px;
+  }
+  .table-card{
+    border-radius: 5px;
+    gap: 15px;
+    height: 200px
+  }
+  .top-data{
+    height:50% ;
+    /* border: 1px solid black; */
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: large;
+  }
+  .bottom-data{
+    height: 50%;
+    /* border: 1px solid black; */
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: large;
+  }
+#Time-Sorting{
+  height: 50%;
+  border: none;
+  border-radius: 5px;
+  font-size: large;
+  background: none;
+}
+
+
+  
+  #likes-filter {
+    width: 100%;
+  }
+
+  /* charts */
+  #chart-box{
+    margin-top: 50px;
+    /* border: 1px solid blue; */
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+  }
+  #chart-box div{
+    width: 100%;
+  }
+  

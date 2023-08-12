@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's Profile</title>
+
+
+
+   <!----======== link the CSS file here ======== -->
+   <link rel="stylesheet" href="./styles/commonDashboard.css">
+   <!-- <link rel="stylesheet" href="./styles/insights.css"> -->
+   <link rel="stylesheet" href="./styles/dashboard.css">
+
+
+   <!----===== Boxicons CSS ===== -->
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+       integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+       crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+    <link rel="stylesheet" href="./styles/profile.css">
+
+
+
+</head>
+<body>
+    
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="./images/logo.png" style="width: 100%;" alt="">
+                </span>
+
+                <!-- <div class="text logo-text">
+                    <span class="name">Course Craft</span>
+                </div> -->
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="./dashboard.html">
+                            <!-- <i class='bx bx-home-alt icon' ></i> -->
+                            <i class="fa-solid fa-house icon"></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="insights.html">
+                            <!-- <i class='bx bx-bar-chart-alt-2 icon' ></i> -->
+                            <i class="fas fa-chart-bar icon"></i>
+                            <span class="text nav-text">Insights</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="creatorstudio.html">
+                            <!-- <i class='bx bx-bell icon'></i> -->
+                            <i class="fas fa-palette icon"></i>
+                            <span class="text nav-text">Creator Studio</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <!-- <i class='bx bx-pie-chart-alt icon' ></i> -->
+                            <i class="fas fa-envelope icon"></i>
+                            <span class="text nav-text">Messages</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <!-- <i class='bx bx-pie-chart-alt icon' ></i> -->
+                            <i class="fas fa-bell icon"></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <!-- <i class='bx bx-pie-chart-alt icon' ></i> -->
+                            <i class="fas fa-user icon"></i>
+                            <span class="text nav-text">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="./index.html">
+                        <!-- <i class='bx bx-log-out icon' ></i> -->
+                        <i id="onclickk" class="fa-solid fa-right-from-bracket fa-rotate-180 icon"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+     <section class="home">
+        <header>
+            <div class="profile">
+                <div class="profile-logo">
+                    <p id="userfirstname">U</p>
+                </div>
+                <p id="username" style="padding-left: 5px;">Username</p>
+            </div>
+
+
+
+
+        </header>
+
+
+
+<div id = "profile-picture">
+
+<img id = "userImage" src="https://tse1.mm.bing.net/th?id=OIP.leRaZskYpTKA55a0St0tZgHaJa&pid=Api&rs=1&c=1&qlt=95&w=97&h=123" alt="keerti">
+
+</div>
+
+<h3 id  = "username">userName</h3>
+
+
+
+
+
+</body>
+</html>
+
+
+<script src="./scripts/profile.js"></script>
+
+
+
+
+    
+<script>
+    const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+
+       
+
+    toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    })
+
+    searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+    })
+
+    modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+            modeText.innerText = "Light mode";
+        } else {
+            modeText.innerText = "Dark mode";
+
+        }
+    });
+</script>
+
+</body>
+
+</html>
+<!-- connect your js file here -->
+<script src="">
+
+</script>
+<script>
+
+let userfirstname = document.getElementById("userfirstname");
+let username = document.getElementById("username");
+
+window.addEventListener("load", myScript);
+function myScript(){
+    let user_name = localStorage.getItem("username")
+    console.log(user_name)
+    
+    let string = user_name[0].toUpperCase()
+    for(let i=1;i<user_name.length;i++){
+        string+=user_name[i]
+    }
+    if(username===null){
+        username.innerHTML= ""
+        userfirstname.innerHTML = "";
+    }else{
+        username.innerHTML = `${string}`
+        userfirstname.innerHTML = `${string[0]}`
+    } 
+}
+
+
+
+
+</script>
+
+<script src="./scripts/dashboard.js"></script>
+<script src="./scripts/commondashboard.js"></script>

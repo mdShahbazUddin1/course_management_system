@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&family=Poppins&display=swap');
+:root{
+    --color-dark:hsl(252,30%,17%);
+    --color-light:hsl(252,36%,95%);
+    --color-gray:hsl(252,15%,65%);
+    --color-primary:hsl(252,75%,60%);
+    --color-secondary:hsl(252,100%,90%);
+    --color-success:hsl(120,95%,65%);
+    --color-danger:hsl(0,95%,65%);
+    --color-white:hsl(255,30%,100%);
+    --color-black:hsl(252,30%,10%);
+
+    --border-radius:2rem;
+    --card-border-radius:1rem;
+    --btn-padding:0.6rem 2rem;
+    --search-padding:0.6rem 1rem;
+    --card-padding:1rem;
+
+    --sticky-top-left:5.4rem;
+    --sticky-top-right:-18rem;
+
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border:none;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    color:var(--color-dark);
+    background: var(--color-light);
+    overflow-x: hidden;
+}
+
+nav{
+    width: 100vw;
+    height: 15vh;
+    position: fixed;
+    top: 0;
+   
+    z-index: 10;
+    
+}
+nav > .container{
+    border: 1px solid black;
+    width: 100%;
+    height:100%;
+    display: flex;
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    justify-content: space-between;
+    align-items: center;
+}
+nav > .container>.create{
+    display: flex;
+    padding: var(--card-padding);
+    justify-content: space-around;
+    align-items: center;
+}
+nav .search-bar{
+    background: var(--color-light);
+    border-radius: var(--border-radius);
+    padding: var(--search-padding);
+}
+
+nav .search-bar input[type="search"]{
+    background: transparent;
+    width: 30vw;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color:var(--color-dark)
+}
+
+nav .search-bar input[type="search"]::placeholder{
+    color:var(--color-gray);
+}
+.profile-picture{
+    border-radius: var(--border-radius);
+}
+#main-div{
+   
+    
+    display:flex;
+    justify-content: space-between;
+    height: 100vh;
+ 
+}
+
+
+#left-side{
+    width:75%;
+    margin-top: 18px;
+    height:100%;
+
+    margin-left:25px;
+
+}
+
+
+
+#right-side{
+    width:25%;
+    height: 100%;
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+#right-side>div{
+    margin: auto;
+    width: 80%;
+    height: 100%;
+}
+#right-side>div>img{
+    width: 100%;
+}
+#right-side>div>h4,p{
+    padding-left: 1rem;
+}
+
+#left-side>#video-content{
+
+      
+    width: 100%;
+    height: 60%;
+}
+
+#video-content>video{
+    padding-top: 2rem;
+    width:100%;
+    height: 80%;
+border: 1px solid black;
+}
+
+#video-content>#like{
+   height: 8%;
+   
+}
+#like>img{
+    height: 100%;
+}
+#comment{
+    background: var(--color-secondary);
+    
+    height: 40%;
+    padding: var(--card-padding);
+    position:relative;
+}
+#all-comments>div{
+    border: 2px solid yellow;
+    margin-top:2rem;
+ 
+}
+
+
+
+#new-comment{
+    height:3rem;
+    position: absolute;
+    bottom: 5%;
+    z-index:999;
+    width: 90%;
+}
+
+#new-comment>input{
+    border-top-color: transparent ;
+    margin-top: 12px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: var(--border-radius);
+    padding: var(--card-padding);
+}
+#new-comment>input[type="search"]::placeholder{
+    color:var(--color-gray);
+}
+
+
+@media(max-width:768px){
+
+    .search-bar{
+       display: none;
+    }
+    #main-div{
+        flex-direction: column;
+    }
+    #right-side{
+        margin: auto;
+        width: 100%;
+    }
+#left-side{
+ 
+    margin: auto;
+}
+
+    
+    
+}
+@media(max-width:600px){
+    
+ 
+    .search-bar{
+        display: none;
+     }
+     #main-div{
+        flex-direction: column;
+    }
+    #right-side{
+        margin: auto;
+        width: 100%;
+    }
+#left-side{
+ 
+    margin: auto;
+}
+    
+}
+
+
+

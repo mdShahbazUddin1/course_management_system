@@ -1,0 +1,27 @@
+form{
+    width: 40%;
+    margin: auto;
+    background: #e5e5e5;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(74%, 50%)
+}
+
+form>div{
+    margin: auto;
+    width: 55%;
+  text-align: center;
+}
+form>div>div>input{
+display: block;
+    margin-top: 10%;
+    width: 93%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+   outline: none;
+   font-size: 14px;
+}
